@@ -3,6 +3,8 @@
  * @brief    CMSIS Cortex-M33 Core Peripheral Access Layer Header File
  * @version  V5.0.9
  * @date     06. July 2018
+ *
+ * 中文翻译：CMSIS Cortex-M33 内核外设访问层头文件（Armv8-M Mainline，含 TrustZone/FPU）。
  ******************************************************************************/
 /*
  * Copyright (c) 2009-2018 Arm Limited. All rights reserved.

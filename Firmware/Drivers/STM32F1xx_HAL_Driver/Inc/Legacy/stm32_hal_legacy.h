@@ -4,6 +4,8 @@
   * @author  MCD Application Team
   * @brief   This file contains aliases definition for the STM32Cube HAL constants
   *          macros and functions maintained for legacy purpose.
+  *
+  *          中文翻译：HAL 兼容层头文件，定义旧版本宏/函数别名以保持向后兼容。
   ******************************************************************************
   * @attention
   *

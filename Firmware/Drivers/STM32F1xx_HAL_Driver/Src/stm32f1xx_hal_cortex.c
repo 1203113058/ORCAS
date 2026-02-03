@@ -8,6 +8,7 @@
   *           + Initialization and de-initialization functions
   *           + Peripheral Control functions 
   *
+  *          中文翻译：CORTEX HAL 模块驱动，提供 NVIC/SysTick/MPU 等内核外设实现。
   @verbatim  
   ==============================================================================
                         ##### How to use this driver #####

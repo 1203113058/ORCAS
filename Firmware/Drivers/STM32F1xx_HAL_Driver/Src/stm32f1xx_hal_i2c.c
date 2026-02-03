@@ -9,6 +9,7 @@
   *           + IO operation functions
   *           + Peripheral State, Mode and Error functions
   *
+  *          中文翻译：I2C HAL 模块驱动，提供 I2C 主/从模式读写、DMA/IT、状态管理等实现。
   ******************************************************************************
   * @attention
   *

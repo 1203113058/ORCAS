@@ -3,6 +3,8 @@
   * @file    stm32f1xx_hal_gpio_ex.h
   * @author  MCD Application Team
   * @brief   Header file of GPIO HAL Extension module.
+  *
+  *          中文翻译：GPIO HAL 扩展模块头文件，提供 AFIO 重映射等扩展功能。
   ******************************************************************************
   * @attention
   *

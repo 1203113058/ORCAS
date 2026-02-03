@@ -9,6 +9,7 @@
   *           + Initialization/de-initialization functions
   *           + Peripheral Control functions 
   *
+  *          中文翻译：PWR HAL 模块驱动，提供电源管理、低功耗模式等实现。
   ******************************************************************************
   * @attention
   *

@@ -8,6 +8,7 @@
   *           + Initialization and de-initialization functions
   *           + IO operation functions
   *
+  *          中文翻译：EXTI HAL 模块驱动，提供外部中断线配置、清除等实现。
   ******************************************************************************
   * @attention
   *

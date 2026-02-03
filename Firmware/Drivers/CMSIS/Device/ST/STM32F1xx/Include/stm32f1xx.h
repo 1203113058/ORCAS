@@ -13,6 +13,12 @@
   *                rather than drivers API), this option is controlled by 
   *                "#define USE_HAL_DRIVER"
   *  
+  *          中文翻译：
+  *          该文件是 STM32F1xx 系列的 CMSIS 设备外设访问层头文件，通常在 main.c 等
+  *          源码中作为“唯一入口头文件”被包含。该文件主要包含：
+  *            - 配置区：用于选择目标工程使用的 STM32F1xx 具体型号
+  *            - 是否使用外设驱动（HAL）还是直接寄存器访问：由 "#define USE_HAL_DRIVER" 控制
+  *
   ******************************************************************************
   * @attention
   *

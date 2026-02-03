@@ -3,6 +3,12 @@
   * @file    system_stm32f1xx.h
   * @author  MCD Application Team
   * @brief   CMSIS Cortex-M3 Device Peripheral Access Layer System Header File.
+  *
+  *          中文翻译：
+  *          该头文件为系统初始化相关声明（CMSIS 层）：
+  *           - SystemInit(): 复位后系统时钟/基础系统配置初始化
+  *           - SystemCoreClockUpdate(): 更新 SystemCoreClock 变量
+  *           - SystemCoreClock/AHBPrescTable/APBPrescTable: 系统时钟与分频表
   ******************************************************************************
   * @attention
   *

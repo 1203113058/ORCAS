@@ -3,6 +3,10 @@
  * @brief    CMSIS Armv8-M Mainline Core Peripheral Access Layer Header File
  * @version  V5.0.7
  * @date     06. July 2018
+ *
+ * 中文翻译：
+ * CMSIS Armv8-M Mainline 内核外设访问层头文件。
+ * 提供 Armv8-M Mainline 架构的内核寄存器定义与访问接口。
  ******************************************************************************/
 /*
  * Copyright (c) 2009-2018 Arm Limited. All rights reserved.

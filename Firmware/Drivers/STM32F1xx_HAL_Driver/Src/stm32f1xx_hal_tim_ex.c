@@ -10,6 +10,8 @@
   *           + Time Complementary signal break and dead time configuration
   *           + Time Master and Slave synchronization configuration
   *           + Timer remapping capabilities configuration
+  *
+  *          中文翻译：TIM HAL 扩展模块驱动，提供高级定时器功能（霉尔传感器、互补输出、主从同步等）。
   ******************************************************************************
   * @attention
   *

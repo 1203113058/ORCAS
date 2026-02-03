@@ -3,6 +3,8 @@
   * @file    stm32f1xx_hal_rcc_ex.h
   * @author  MCD Application Team
   * @brief   Header file of RCC HAL Extension module.
+  *
+  *          中文翻译：RCC HAL 扩展模块头文件，提供外设时钟配置扩展接口。
   ******************************************************************************
   * @attention
   *

@@ -3,6 +3,8 @@
   * @file    stm32f1xx_hal_i2c.h
   * @author  MCD Application Team
   * @brief   Header file of I2C HAL module.
+  *
+  *          中文翻译：I2C HAL 模块头文件，提供 I2C 主/从模式、读写、DMA/IT 等接口。
   ******************************************************************************
   * @attention
   *

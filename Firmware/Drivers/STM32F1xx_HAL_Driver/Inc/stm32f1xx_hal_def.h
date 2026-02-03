@@ -4,6 +4,8 @@
   * @author  MCD Application Team
   * @brief   This file contains HAL common defines, enumeration, macros and
   *          structures definitions.
+  *
+  *          中文翻译：HAL 公共定义头文件，包含 HAL_StatusTypeDef/HAL_LockTypeDef 等基础类型与宏。
   ******************************************************************************
   * @attention
   *

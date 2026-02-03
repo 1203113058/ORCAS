@@ -7,6 +7,7 @@
   *          functionalities RCC extension peripheral:
   *           + Extended Peripheral Control functions
   *
+  *          中文翻译：RCC HAL 扩展模块驱动，提供外设时钟配置扩展实现。
   ******************************************************************************
   * @attention
   *

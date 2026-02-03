@@ -10,8 +10,16 @@
   *                - Configure the clock system   
   *                - Branches to main in the C library (which eventually
   *                  calls main()).
+  *
+  *            中文说明：
+  *                - 设置初始栈指针 SP
+  *                - 设置复位入口 PC = Reset_Handler
+  *                - 初始化中断向量表（异常/中断入口地址）
+  *                - 初始化系统时钟（SystemInit）
+  *                - 跳转到 C 运行时入口（最终调用 main()）
   *            After Reset the Cortex-M3 processor is in Thread mode,
   *            priority is Privileged, and the Stack is set to Main.
+  *            中文说明：复位后 CPU 处于 Thread 模式、特权级，使用主栈 MSP。
   ******************************************************************************
   * @attention
   *
@@ -36,14 +44,19 @@
 /* start address for the initialization values of the .data section.
 defined in linker script */
 .word _sidata
+/* 中文说明：.data 初值在 Flash 中的起始地址（链接脚本提供） */
 /* start address for the .data section. defined in linker script */
 .word _sdata
+/* 中文说明：.data 在 RAM 中的起始地址（链接脚本提供） */
 /* end address for the .data section. defined in linker script */
 .word _edata
+/* 中文说明：.data 在 RAM 中的结束地址（链接脚本提供） */
 /* start address for the .bss section. defined in linker script */
 .word _sbss
+/* 中文说明：.bss 在 RAM 中的起始地址（链接脚本提供） */
 /* end address for the .bss section. defined in linker script */
 .word _ebss
+/* 中文说明：.bss 在 RAM 中的结束地址（链接脚本提供） */
 
 .equ  BootRAM, 0xF108F85F
 /**
@@ -51,6 +64,7 @@ defined in linker script */
  *          starts execution following a reset event. Only the absolutely
  *          necessary set is performed, after which the application
  *          supplied main() routine is called.
+ *          中文说明：复位后最先执行的入口，只做最必要的初始化，随后进入 main()。
  * @param  None
  * @retval : None
 */
@@ -62,8 +76,10 @@ Reset_Handler:
 
 /* Call the clock system initialization function.*/
     bl  SystemInit
+/* 中文说明：调用 SystemInit() 配置系统时钟 */
 
 /* Copy the data segment initializers from flash to SRAM */
+/* 中文说明：将 .data 段初值从 Flash 拷贝到 SRAM */
   ldr r0, =_sdata
   ldr r1, =_edata
   ldr r2, =_sidata
@@ -81,6 +97,7 @@ LoopCopyDataInit:
   bcc CopyDataInit
   
 /* Zero fill the bss segment. */
+/* 中文说明：将 .bss 段清零 */
   ldr r2, =_sbss
   ldr r4, =_ebss
   movs r3, #0
@@ -96,8 +113,10 @@ LoopFillZerobss:
 
 /* Call static constructors */
     bl __libc_init_array
+/* 中文说明：调用 C/C++ 静态构造（初始化全局/静态对象） */
 /* Call the application's entry point.*/
   bl main
+/* 中文说明：进入应用入口 main() */
   bx lr
 .size Reset_Handler, .-Reset_Handler
 
@@ -105,6 +124,7 @@ LoopFillZerobss:
  * @brief  This is the code that gets called when the processor receives an
  *         unexpected interrupt.  This simply enters an infinite loop, preserving
  *         the system state for examination by a debugger.
+ *         中文说明：默认中断处理函数；未实现的中断会进入死循环，便于调试定位。
  *
  * @param  None
  * @retval : None
@@ -119,6 +139,8 @@ Infinite_Loop:
 * The minimal vector table for a Cortex M3.  Note that the proper constructs
 * must be placed on this to ensure that it ends up at physical address
 * 0x0000.0000.
+*
+* 中文说明：Cortex-M3 的最小中断向量表，链接/定位必须保证该表位于 0x00000000。
 *
 ******************************************************************************/
   .section .isr_vector,"a",%progbits
@@ -196,6 +218,7 @@ g_pfnVectors:
   .word 0
   .word BootRAM          /* @0x108. This is for boot in RAM mode for
                             STM32F10x Medium Density devices. */
+                          /* 中文说明：BootRAM 用于 RAM 启动模式（部分型号/密度适用） */
 
 /*******************************************************************************
 *
@@ -203,7 +226,15 @@ g_pfnVectors:
 * As they are weak aliases, any function with the same name will override
 * this definition.
 *
+* 中文说明：为各异常/中断处理函数提供 weak 弱别名，默认指向 Default_Handler。
+*          如果用户在 C 代码中实现了同名函数，会覆盖这里的默认实现。
+*
 *******************************************************************************/
+
+/* 中文说明：以下为各中断处理函数的弱符号声明与默认映射。
+ * - 若用户未在 C 代码中实现对应 IRQHandler，则会映射到 Default_Handler 死循环。
+ * - 若用户实现了同名函数（例如 TIM2_IRQHandler），链接时会覆盖这里的默认映射。
+ */
 
   .weak NMI_Handler
   .thumb_set NMI_Handler,Default_Handler

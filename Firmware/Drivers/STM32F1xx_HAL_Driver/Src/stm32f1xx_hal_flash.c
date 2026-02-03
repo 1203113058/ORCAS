@@ -8,7 +8,8 @@
   *           + Program operations functions
   *           + Memory Control functions 
   *           + Peripheral State functions
-  *         
+  *
+  *          中文翻译：Flash HAL 模块驱动，提供内部 Flash 擦除、编程、读保护等实现。
   @verbatim
   ==============================================================================
                         ##### FLASH peripheral features #####

@@ -8,6 +8,7 @@
   *           + Initialization and de-initialization functions
   *           + IO operation functions
   *
+  *          中文翻译：GPIO HAL 模块驱动，提供引脚初始化、读写、中断回调等实现。
   ******************************************************************************
   * @attention
   *

@@ -57,6 +57,12 @@
 
 #include "stm32f1xx.h"
 
+/*
+ * 系统时钟/启动相关文件（CMSIS / ST 提供）
+ * - 负责 SystemInit()/SystemCoreClockUpdate() 等基础时钟配置
+ * - 通常由库/工具链生成或维护，建议仅在确有需要时最小化修改
+ */
+
 /**
   * @}
   */

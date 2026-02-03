@@ -10,6 +10,7 @@
   *           + Peripheral Control functions
   *           + Peripheral State and Errors functions
   *
+  *          中文翻译：UART HAL 模块驱动，提供串口发送/接收、DMA/IT、状态管理等实现。
   ******************************************************************************
   * @attention
   *

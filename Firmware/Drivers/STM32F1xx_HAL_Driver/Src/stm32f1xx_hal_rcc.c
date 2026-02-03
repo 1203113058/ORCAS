@@ -8,6 +8,7 @@
   *           + Initialization and de-initialization functions
   *           + Peripheral Control functions
   *
+  *          中文翻译：RCC HAL 模块驱动，提供时钟配置、外设时钟使能/复位等实现。
   @verbatim
   ==============================================================================
                       ##### RCC specific features #####

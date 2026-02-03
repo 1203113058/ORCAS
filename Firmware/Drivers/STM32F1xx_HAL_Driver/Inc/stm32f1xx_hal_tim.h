@@ -3,6 +3,8 @@
   * @file    stm32f1xx_hal_tim.h
   * @author  MCD Application Team
   * @brief   Header file of TIM HAL module.
+  *
+  *          中文翻译：TIM HAL 模块头文件，提供定时器/PWM/输入捕获/编码器等接口。
   ******************************************************************************
   * @attention
   *

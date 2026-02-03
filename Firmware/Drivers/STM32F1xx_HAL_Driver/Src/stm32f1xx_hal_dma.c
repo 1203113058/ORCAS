@@ -8,6 +8,8 @@
   *           + Initialization and de-initialization functions
   *           + IO operation functions
   *           + Peripheral State and errors functions
+  *
+  *          中文翻译：DMA HAL 模块驱动，提供 DMA 通道配置、启动、中断等实现。
   @verbatim
   ==============================================================================
                         ##### How to use this driver #####

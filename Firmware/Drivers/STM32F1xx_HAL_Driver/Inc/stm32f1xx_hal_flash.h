@@ -3,6 +3,8 @@
   * @file    stm32f1xx_hal_flash.h
   * @author  MCD Application Team
   * @brief   Header file of Flash HAL module.
+  *
+  *          中文翻译：Flash HAL 模块头文件，提供内部 Flash 擦除、编程、读保护等接口。
   ******************************************************************************
   * @attention
   *

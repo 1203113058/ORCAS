@@ -7,6 +7,7 @@
   *          functionalities of the General Purpose Input/Output (GPIO) extension peripheral.
   *           + Extended features functions
   *
+  *          中文翻译：GPIO HAL 扩展模块驱动，提供 AFIO 重映射等扩展功能实现。
   ******************************************************************************
   * @attention
   *

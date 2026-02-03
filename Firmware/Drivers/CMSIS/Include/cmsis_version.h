@@ -3,6 +3,9 @@
  * @brief    CMSIS Core(M) Version definitions
  * @version  V5.0.2
  * @date     19. April 2017
+ *
+ * 中文翻译：
+ * 本文件定义 CMSIS Core(M) 的版本号相关宏（主版本/子版本/组合版本）。
  ******************************************************************************/
 /*
  * Copyright (c) 2009-2017 ARM Limited. All rights reserved.

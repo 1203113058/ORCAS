@@ -32,6 +32,12 @@
   * @brief This is the list of modules to be used in the HAL driver
   */
 
+/*
+ * HAL 模块使能开关
+ * - 仅使能实际使用到的外设模块可减小编译体积
+ * - 由 CubeMX 生成/维护，通常不建议在非必要时手工大改
+ */
+
 #define HAL_MODULE_ENABLED
   /*#define HAL_ADC_MODULE_ENABLED   */
 /*#define HAL_CRYP_MODULE_ENABLED   */
@@ -82,6 +88,8 @@
   *        This value is used by the RCC HAL module to compute the system frequency
   *        (when HSE is used as system clock source, directly or through the PLL).
   */
+
+/* 时钟源相关数值配置（HSE/HSI/LSI/LSE），用于 HAL 计算系统频率 */
 #if !defined  (HSE_VALUE)
   #define HSE_VALUE    8000000U /*!< Value of the External oscillator in Hz */
 #endif /* HSE_VALUE */
@@ -127,6 +135,8 @@
 /**
   * @brief This is the HAL system configuration section
   */
+
+/* 系统级配置：供电电压、Tick 中断优先级、是否使用 RTOS、Flash 预取等 */
 #define  VDD_VALUE                    3300U /*!< Value of VDD in mv */
 #define  TICK_INT_PRIORITY            0U    /*!< tick interrupt priority (lowest by default)  */
 #define  USE_RTOS                     0U

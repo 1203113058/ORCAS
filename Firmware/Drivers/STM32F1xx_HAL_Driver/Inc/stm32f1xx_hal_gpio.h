@@ -3,6 +3,8 @@
   * @file    stm32f1xx_hal_gpio.h
   * @author  MCD Application Team
   * @brief   Header file of GPIO HAL module.
+  *
+  *          中文翻译：GPIO HAL 模块头文件，提供引脚初始化、读写、中断等操作。
   ******************************************************************************
   * @attention
   *

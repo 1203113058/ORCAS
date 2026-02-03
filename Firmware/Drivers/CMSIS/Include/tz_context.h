@@ -3,6 +3,8 @@
  * @brief    Context Management for Armv8-M TrustZone
  * @version  V1.0.1
  * @date     10. January 2018
+ *
+ * 中文翻译：Armv8-M TrustZone 上下文管理头文件（安全/非安全世界切换）。
  ******************************************************************************/
 /*
  * Copyright (c) 2017-2018 Arm Limited. All rights reserved.

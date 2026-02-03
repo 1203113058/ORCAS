@@ -3,6 +3,10 @@
  * @brief    CMSIS compiler ARMCC (Arm Compiler 5) header file
  * @version  V5.0.4
  * @date     10. January 2018
+ *
+ * 中文翻译：
+ * CMSIS ARMCC (Arm Compiler 5) 编译器特定头文件。
+ * 提供 ARMCC 下的内联汇编宏、内存屏障、位操作等底层访问接口。
  ******************************************************************************/
 /*
  * Copyright (c) 2009-2018 Arm Limited. All rights reserved.

@@ -9,7 +9,8 @@
   *           + Extended Initialization/de-initialization functions
   *           + Extended I/O operation functions
   *           + Extended Peripheral Control functions 
-  *         
+  *
+  *          中文翻译：Flash HAL 扩展模块驱动，提供 Option Bytes 等扩展操作实现。
   @verbatim
   ==============================================================================
                ##### Flash peripheral extended features  #####

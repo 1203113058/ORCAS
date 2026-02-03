@@ -47,6 +47,7 @@ extern "C" {
 
 /* Exported macro ------------------------------------------------------------*/
 /* USER CODE BEGIN EM */
+/* 固件版本字符串（用于上位机/调试读取） */
 #define FW_VER	"ORCAS_20251116 "
 /* USER CODE END EM */
 
@@ -56,12 +57,19 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
+/*
+ * I2C 总线 Busy 强制清除
+ * - 当 I2C 异常导致 BUSY 卡死时，可通过手动拉动 SCL 产生时钟并释放 SDA
+ * @hi2c:       I2C 句柄
+ * @sda/scl_*:  对应 GPIO 端口与引脚
+ */
 void MX_I2C_ForceClearBusyFlag(I2C_HandleTypeDef *hi2c,
 							   GPIO_TypeDef* sda_gpio_port, uint16_t sda_gpio_pin,
 							   GPIO_TypeDef* scl_gpio_port, uint16_t scl_gpio_pin);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+/* 电机/机构控制相关 IO */
 #define FEEDER_MOTOR_DIR_Pin GPIO_PIN_13
 #define FEEDER_MOTOR_DIR_GPIO_Port GPIOC
 #define AEG_MOTOR_PWM_Pin GPIO_PIN_6
@@ -99,11 +107,14 @@ void MX_I2C_ForceClearBusyFlag(I2C_HandleTypeDef *hi2c,
 #define TILT_MOTOR_DIR_GPIO_Port GPIOB
 #define FEEDER_MOTOR_STEP_Pin GPIO_PIN_5
 #define FEEDER_MOTOR_STEP_GPIO_Port GPIOB
+
+/* 板载指示灯 */
 #define LED_D2_Pin GPIO_PIN_8
 #define LED_D2_GPIO_Port GPIOB
 #define LED_D1_Pin GPIO_PIN_9
 #define LED_D1_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
+/* I2C1/2 的 SDA/SCL 引脚定义（用于 GPIO 操作/总线恢复等） */
 #define I2C1_SDA_Pin GPIO_PIN_7
 #define I2C1_SDA_GPIO_Port GPIOB
 #define I2C1_SCL_Pin GPIO_PIN_6

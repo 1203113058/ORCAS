@@ -206,6 +206,10 @@ void SysTick_Handler(void)
 void EXTI9_5_IRQHandler(void)
 {
   /* USER CODE BEGIN EXTI9_5_IRQn 0 */
+	/*
+	 * EXTI9_5：外部中断线 5~9
+	 * - 本工程中用于 PAN 原点、AEG 活塞限位等事件输入（具体引脚见 main.h）
+	 */
 
   /* USER CODE END EXTI9_5_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_6);
@@ -221,6 +225,10 @@ void EXTI9_5_IRQHandler(void)
 void TIM2_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM2_IRQn 0 */
+	/*
+	 * TIM2：周期调度节拍中断
+	 * - 建议在回调/中断中仅置位标志，具体任务在 main() 主循环中执行
+	 */
 
   /* USER CODE END TIM2_IRQn 0 */
   HAL_TIM_IRQHandler(&htim2);
@@ -235,6 +243,7 @@ void TIM2_IRQHandler(void)
 void USART1_IRQHandler(void)
 {
   /* USER CODE BEGIN USART1_IRQn 0 */
+	/* USART1：串口收发中断（命令协议接收回调在 uart_cmds_handle.c） */
 
   /* USER CODE END USART1_IRQn 0 */
   HAL_UART_IRQHandler(&huart1);
@@ -249,6 +258,7 @@ void USART1_IRQHandler(void)
 void EXTI15_10_IRQHandler(void)
 {
   /* USER CODE BEGIN EXTI15_10_IRQn 0 */
+	/* EXTI15_10：外部中断线 10~15（本工程中用于 RADAR 原点等事件输入） */
 
   /* USER CODE END EXTI15_10_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_15);

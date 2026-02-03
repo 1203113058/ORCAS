@@ -3,6 +3,10 @@
  * @brief    CMSIS compiler generic header file
  * @version  V5.0.4
  * @date     10. January 2018
+ *
+ * 中文翻译：
+ * CMSIS 编译器通用头文件。
+ * 根据不同编译器（ARMCC/GCC/IAR/Clang）自动包含对应的编译器特定头文件。
  ******************************************************************************/
 /*
  * Copyright (c) 2009-2018 Arm Limited. All rights reserved.

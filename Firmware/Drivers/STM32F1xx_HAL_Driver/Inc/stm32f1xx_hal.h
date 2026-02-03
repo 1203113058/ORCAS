@@ -4,6 +4,8 @@
   * @author  MCD Application Team
   * @brief   This file contains all the functions prototypes for the HAL
   *          module driver.
+  *
+  *          中文翻译：HAL 模块驱动头文件，包含 HAL_Init/HAL_DeInit/HAL_Delay 等基础 API。
   ******************************************************************************
   * @attention
   *

@@ -3,6 +3,10 @@
  * @brief    CMSIS compiler GCC header file
  * @version  V5.0.4
  * @date     09. April 2018
+ *
+ * 中文翻译：
+ * CMSIS GCC 编译器特定头文件。
+ * 提供 GCC 下的内联汇编宏、内存屏障、位操作等底层访问接口。
  ******************************************************************************/
 /*
  * Copyright (c) 2009-2018 Arm Limited. All rights reserved.

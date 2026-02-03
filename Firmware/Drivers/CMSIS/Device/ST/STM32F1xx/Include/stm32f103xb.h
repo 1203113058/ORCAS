@@ -11,6 +11,12 @@
   *           - Peripheral's registers declarations and bits definition
   *           - Macros to access peripheral's registers hardware
   *  
+  *          中文翻译：
+  *          该文件提供 STM32F103xB（STM32F1xx）系列的外设访问层定义，包含：
+  *           - 所有外设的数据结构体定义与地址映射（memory map）
+  *           - 外设寄存器声明与寄存器位定义
+  *           - 访问外设寄存器的宏定义
+  *
   ******************************************************************************
   * @attention
   *

@@ -3,6 +3,8 @@
   * @file    stm32f1xx_hal_dma.h
   * @author  MCD Application Team
   * @brief   Header file of DMA HAL module.
+  *
+  *          中文翻译：DMA HAL 模块头文件，提供 DMA 通道配置、启动、中断等接口。
   ******************************************************************************
   * @attention
   *

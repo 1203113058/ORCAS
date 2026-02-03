@@ -3,6 +3,8 @@
   * @file    stm32f1xx_hal_dma_ex.h
   * @author  MCD Application Team
   * @brief   Header file of DMA HAL extension module.
+  *
+  *          中文翻译：DMA HAL 扩展模块头文件，提供多缓冲等扩展功能。
   ******************************************************************************
   * @attention
   *

@@ -3,6 +3,8 @@
  * @brief    CMSIS Cortex-M7 Core Peripheral Access Layer Header File
  * @version  V5.0.8
  * @date     04. June 2018
+ *
+ * 中文翻译：CMSIS Cortex-M7 内核外设访问层头文件（含 FPU/Cache 支持）。
  ******************************************************************************/
 /*
  * Copyright (c) 2009-2018 Arm Limited. All rights reserved.

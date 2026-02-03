@@ -3,6 +3,8 @@
   * @file    stm32f1xx_hal_rcc.h
   * @author  MCD Application Team
   * @brief   Header file of RCC HAL module.
+  *
+  *          中文翻译：RCC HAL 模块头文件，提供时钟配置、外设时钟使能/复位等接口。
   ******************************************************************************
   * @attention
   *

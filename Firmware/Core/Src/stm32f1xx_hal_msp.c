@@ -66,6 +66,11 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 void HAL_MspInit(void)
 {
   /* USER CODE BEGIN MspInit 0 */
+	/*
+	 * MSP 全局初始化
+	 * - 使能 AFIO/PWR 时钟
+	 * - 配置调试接口重映射（此处为 NOJTAG，仅保留 SWD）
+	 */
 
   /* USER CODE END MspInit 0 */
 
@@ -95,6 +100,7 @@ void HAL_I2C_MspInit(I2C_HandleTypeDef* hi2c)
   if(hi2c->Instance==I2C1)
   {
   /* USER CODE BEGIN I2C1_MspInit 0 */
+	/* I2C1 硬件资源初始化：GPIO + 外设时钟 */
 
   /* USER CODE END I2C1_MspInit 0 */
 
@@ -117,6 +123,7 @@ void HAL_I2C_MspInit(I2C_HandleTypeDef* hi2c)
   else if(hi2c->Instance==I2C2)
   {
   /* USER CODE BEGIN I2C2_MspInit 0 */
+	/* I2C2 硬件资源初始化：GPIO + 外设时钟 */
 
   /* USER CODE END I2C2_MspInit 0 */
 
@@ -201,6 +208,7 @@ void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* htim_base)
   if(htim_base->Instance==TIM2)
   {
   /* USER CODE BEGIN TIM2_MspInit 0 */
+	/* TIM2：周期调度节拍定时器（开启中断用于置位任务标志） */
 
   /* USER CODE END TIM2_MspInit 0 */
     /* Peripheral clock enable */
@@ -215,6 +223,7 @@ void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* htim_base)
   else if(htim_base->Instance==TIM3)
   {
   /* USER CODE BEGIN TIM3_MspInit 0 */
+	/* TIM3：PWM 输出定时器（AEG/TRACER/SEARCHLIGHT 等） */
 
   /* USER CODE END TIM3_MspInit 0 */
     /* Peripheral clock enable */
@@ -232,6 +241,7 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef* htim)
   if(htim->Instance==TIM3)
   {
   /* USER CODE BEGIN TIM3_MspPostInit 0 */
+	/* TIM3 PWM 引脚复用配置：AEG/TRACER/SEARCHLIGHT 对应的 PWM 输出 */
 
   /* USER CODE END TIM3_MspPostInit 0 */
 
@@ -306,6 +316,7 @@ void HAL_UART_MspInit(UART_HandleTypeDef* huart)
   if(huart->Instance==USART1)
   {
   /* USER CODE BEGIN USART1_MspInit 0 */
+	/* USART1：用于 UART 命令通信（TX=PA9, RX=PA10） */
 
   /* USER CODE END USART1_MspInit 0 */
     /* Peripheral clock enable */

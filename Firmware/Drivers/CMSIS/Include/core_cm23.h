@@ -3,6 +3,8 @@
  * @brief    CMSIS Cortex-M23 Core Peripheral Access Layer Header File
  * @version  V5.0.7
  * @date     22. June 2018
+ *
+ * 中文翻译：CMSIS Cortex-M23 内核外设访问层头文件（Armv8-M Baseline）。
  ******************************************************************************/
 /*
  * Copyright (c) 2009-2018 Arm Limited. All rights reserved.

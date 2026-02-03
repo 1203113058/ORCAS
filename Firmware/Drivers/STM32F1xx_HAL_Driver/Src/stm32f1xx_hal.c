@@ -5,6 +5,7 @@
   * @brief   HAL module driver.
   *          This is the common part of the HAL initialization
   *
+  *          中文翻译：HAL 模块驱动，包含 HAL_Init/HAL_DeInit/HAL_Delay/HAL_GetTick 等基础 API。
   ******************************************************************************
   * @attention
   *

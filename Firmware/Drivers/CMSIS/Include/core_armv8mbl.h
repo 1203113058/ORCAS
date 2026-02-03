@@ -3,6 +3,10 @@
  * @brief    CMSIS Armv8-M Baseline Core Peripheral Access Layer Header File
  * @version  V5.0.7
  * @date     22. June 2018
+ *
+ * 中文翻译：
+ * CMSIS Armv8-M Baseline 内核外设访问层头文件。
+ * 提供 Armv8-M Baseline 架构的内核寄存器定义与访问接口。
  ******************************************************************************/
 /*
  * Copyright (c) 2009-2018 Arm Limited. All rights reserved.

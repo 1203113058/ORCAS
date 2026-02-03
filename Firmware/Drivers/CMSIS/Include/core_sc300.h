@@ -3,6 +3,8 @@
  * @brief    CMSIS SC300 Core Peripheral Access Layer Header File
  * @version  V5.0.6
  * @date     04. June 2018
+ *
+ * 中文翻译：CMSIS SC300 内核外设访问层头文件（SecurCore SC300）。
  ******************************************************************************/
 /*
  * Copyright (c) 2009-2018 Arm Limited. All rights reserved.

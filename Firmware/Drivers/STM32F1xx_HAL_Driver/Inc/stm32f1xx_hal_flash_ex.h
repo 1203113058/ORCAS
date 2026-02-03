@@ -3,6 +3,8 @@
   * @file    stm32f1xx_hal_flash_ex.h
   * @author  MCD Application Team
   * @brief   Header file of Flash HAL Extended module.
+  *
+  *          中文翻译：Flash HAL 扩展模块头文件，提供 Option Bytes 等扩展操作。
   ******************************************************************************
   * @attention
   *

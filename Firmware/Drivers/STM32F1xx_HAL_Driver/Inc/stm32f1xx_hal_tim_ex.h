@@ -3,6 +3,8 @@
   * @file    stm32f1xx_hal_tim_ex.h
   * @author  MCD Application Team
   * @brief   Header file of TIM HAL Extended module.
+  *
+  *          中文翻译：TIM HAL 扩展模块头文件，提供高级定时器功能（如互补输出等）。
   ******************************************************************************
   * @attention
   *

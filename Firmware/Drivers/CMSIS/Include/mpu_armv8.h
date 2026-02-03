@@ -3,6 +3,8 @@
  * @brief    CMSIS MPU API for Armv8-M MPU
  * @version  V5.0.4
  * @date     10. January 2018
+ *
+ * 中文翻译：CMSIS Armv8-M MPU（内存保护单元）API 头文件。
  ******************************************************************************/
 /*
  * Copyright (c) 2017-2018 Arm Limited. All rights reserved.

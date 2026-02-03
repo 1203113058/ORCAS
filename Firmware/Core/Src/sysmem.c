@@ -25,6 +25,12 @@
 #include <errno.h>
 #include <stdint.h>
 
+/*
+ * newlib 堆分配支持（STM32CubeIDE 自动生成）
+ * - _sbrk() 由 malloc/free 等调用，用于从链接脚本的 _end 起向上分配堆
+ * - 通过 _Min_Stack_Size 与 _estack 限制堆增长，避免与 MSP 栈冲突
+ */
+
 /**
  * Pointer to the current high watermark of the heap usage
  */

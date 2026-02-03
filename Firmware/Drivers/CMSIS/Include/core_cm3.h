@@ -3,6 +3,10 @@
  * @brief    CMSIS Cortex-M3 Core Peripheral Access Layer Header File
  * @version  V5.0.8
  * @date     04. June 2018
+ *
+ * 中文翻译：
+ * CMSIS Cortex-M3 内核外设访问层头文件。
+ * 提供 Cortex-M3 内核寄存器定义、NVIC/SysTick/MPU/调试接口等内核外设访问函数与宏。
  ******************************************************************************/
 /*
  * Copyright (c) 2009-2018 Arm Limited. All rights reserved.

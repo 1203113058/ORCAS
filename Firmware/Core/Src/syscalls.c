@@ -31,6 +31,12 @@
 #include <sys/time.h>
 #include <sys/times.h>
 
+/*
+ * newlib 系统调用桩（STM32CubeIDE 自动生成）
+ * - 为 printf/_write、scanf/_read、进程/文件相关 API 提供最小实现
+ * - 多数工程会将 _write 重定向到串口/半主机输出
+ */
+
 
 /* Variables */
 //#undef errno

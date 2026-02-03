@@ -3,6 +3,8 @@
  * @brief    CMSIS Cortex-M0 Core Peripheral Access Layer Header File
  * @version  V5.0.5
  * @date     28. May 2018
+ *
+ * 中文翻译：CMSIS Cortex-M0 内核外设访问层头文件。
  ******************************************************************************/
 /*
  * Copyright (c) 2009-2018 Arm Limited. All rights reserved.

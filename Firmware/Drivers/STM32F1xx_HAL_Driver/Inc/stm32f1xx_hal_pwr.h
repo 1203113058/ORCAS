@@ -3,6 +3,8 @@
   * @file    stm32f1xx_hal_pwr.h
   * @author  MCD Application Team
   * @brief   Header file of PWR HAL module.
+  *
+  *          中文翻译：PWR HAL 模块头文件，提供电源管理、低功耗模式等接口。
   ******************************************************************************
   * @attention
   *

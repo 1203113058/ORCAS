@@ -3,6 +3,8 @@
   * @file    stm32f1xx_hal_cortex.h
   * @author  MCD Application Team
   * @brief   Header file of CORTEX HAL module.
+  *
+  *          中文翻译：CORTEX HAL 模块头文件，提供 NVIC/SysTick/MPU 等内核外设接口。
   ******************************************************************************
   * @attention
   *

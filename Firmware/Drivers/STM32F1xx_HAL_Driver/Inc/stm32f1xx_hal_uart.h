@@ -3,6 +3,8 @@
   * @file    stm32f1xx_hal_uart.h
   * @author  MCD Application Team
   * @brief   Header file of UART HAL module.
+  *
+  *          中文翻译：UART HAL 模块头文件，提供串口发送、接收、DMA/IT 等接口。
   ******************************************************************************
   * @attention
   *

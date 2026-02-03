@@ -22,6 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+/* 中文说明：用户 include 区（在此添加自定义头文件 include，重新生成代码时会保留） */
 #include "uart_cmds_handle.h"
 #include "fire_ctrl_utils.h"
 #include "orientation_ctrl_utils.h"
@@ -31,14 +32,20 @@
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
 
+/* 中文说明：用户 typedef 区（在此添加自定义类型定义，重新生成代码时会保留） */
+
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+
+/* 中文说明：用户宏定义区（在此添加自定义 #define，重新生成代码时会保留） */
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
+
+/* 中文说明：用户宏/辅助宏区（在此添加宏或小工具宏，重新生成代码时会保留） */
 
 /* USER CODE END PM */
 
@@ -52,6 +59,10 @@ TIM_HandleTypeDef htim3;
 UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
+/*
+ * 周期任务分发标志（由定时器中断置位，主循环轮询清位并执行）
+ * - 采用 bit mask，避免在中断里执行耗时逻辑
+ */
 #define PERODIC_ROUTINES_DISPATCHED__FIRE_CTRL			0x01
 #define PERODIC_ROUTINES_DISPATCHED__ORIENTATION_CTRL	0x02
 #define PERODIC_ROUTINES_DISPATCHED__UART_CMDS_HANDLING	0x04
@@ -69,10 +80,14 @@ static void MX_I2C1_Init(void);
 static void MX_I2C2_Init(void);
 /* USER CODE BEGIN PFP */
 
+/* 中文说明：用户私有函数原型（在此处添加自定义 static/extern 函数声明，重新生成代码时会保留） */
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+/* 中文说明：用户私有代码区（main() 前的自定义变量/函数实现可放这里，重新生成代码时会保留） */
 
 /* USER CODE END 0 */
 
@@ -84,6 +99,8 @@ int main(void)
 {
   /* USER CODE BEGIN 1 */
 
+  /* 中文说明：用户代码区 1（main() 入口处的早期用户初始化代码，可在此处添加，重新生成时保留） */
+
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -93,12 +110,16 @@ int main(void)
 
   /* USER CODE BEGIN Init */
 
+  /* 中文说明：用户初始化区 Init（HAL_Init() 之后、时钟配置之前的用户初始化代码，重新生成时保留） */
+
   /* USER CODE END Init */
 
   /* Configure the system clock */
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
+
+  /* 中文说明：用户系统初始化区 SysInit（系统时钟配置之后、外设初始化之前的用户代码，重新生成时保留） */
 
   /* USER CODE END SysInit */
 
@@ -110,6 +131,12 @@ int main(void)
   MX_I2C1_Init();
   MX_I2C2_Init();
   /* USER CODE BEGIN 2 */
+  /*
+   * 外设/模块初始化
+   * - TIM2: 用作周期调度节拍（中断里仅置位 perodic_routines_dispatched）
+   * - UART1: 启动按字节接收（命令协议解析在 uart_cmds_handle.c）
+   * - 各业务模块 init()：初始化电机/传感器等
+   */
   HAL_TIM_Base_Start_IT(&htim2);
   HAL_UART_Receive_IT(&huart1, uart_rx_buf, 1);
 #ifdef TOF_SENSORS_CTRL
@@ -124,8 +151,10 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  /* 中文说明：主循环用户区（在此可添加你自己的 while(1) 循环逻辑，重新生成时会保留） */
   while (1)
   {
+	/* 主循环：按调度位分发周期任务（各任务内部自行做节拍/分组） */
 	if(perodic_routines_dispatched & PERODIC_ROUTINES_DISPATCHED__FIRE_CTRL){
 		perodic_routines_dispatched &= ~PERODIC_ROUTINES_DISPATCHED__FIRE_CTRL;
 		fire_ctrl_perodic_routines();
@@ -147,6 +176,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+    /* 中文说明：主循环用户区 3（while 循环末尾的用户代码区，重新生成时会保留） */
   }
   /* USER CODE END 3 */
 }
@@ -196,9 +226,13 @@ static void MX_I2C1_Init(void)
 
   /* USER CODE BEGIN I2C1_Init 0 */
 
+  /* 中文说明：I2C1 初始化用户区 0（初始化开始前，可插入自定义代码，重新生成时会保留） */
+
   /* USER CODE END I2C1_Init 0 */
 
   /* USER CODE BEGIN I2C1_Init 1 */
+
+  /* 中文说明：I2C1 初始化用户区 1（配置参数前的用户代码区，重新生成时会保留） */
 
   /* USER CODE END I2C1_Init 1 */
   hi2c1.Instance = I2C1;
@@ -216,6 +250,8 @@ static void MX_I2C1_Init(void)
   }
   /* USER CODE BEGIN I2C1_Init 2 */
 
+  /* 中文说明：I2C1 初始化用户区 2（HAL_I2C_Init 之后的用户代码区，重新生成时会保留） */
+
   /* USER CODE END I2C1_Init 2 */
 
 }
@@ -230,9 +266,13 @@ static void MX_I2C2_Init(void)
 
   /* USER CODE BEGIN I2C2_Init 0 */
 
+  /* 中文说明：I2C2 初始化用户区 0（初始化开始前，可插入自定义代码，重新生成时会保留） */
+
   /* USER CODE END I2C2_Init 0 */
 
   /* USER CODE BEGIN I2C2_Init 1 */
+
+  /* 中文说明：I2C2 初始化用户区 1（配置参数前的用户代码区，重新生成时会保留） */
 
   /* USER CODE END I2C2_Init 1 */
   hi2c2.Instance = I2C2;
@@ -250,6 +290,8 @@ static void MX_I2C2_Init(void)
   }
   /* USER CODE BEGIN I2C2_Init 2 */
 
+  /* 中文说明：I2C2 初始化用户区 2（HAL_I2C_Init 之后的用户代码区，重新生成时会保留） */
+
   /* USER CODE END I2C2_Init 2 */
 
 }
@@ -264,12 +306,16 @@ static void MX_TIM2_Init(void)
 
   /* USER CODE BEGIN TIM2_Init 0 */
 
+  /* 中文说明：TIM2 初始化用户区 0（初始化开始前，可插入自定义代码，重新生成时会保留） */
+
   /* USER CODE END TIM2_Init 0 */
 
   TIM_ClockConfigTypeDef sClockSourceConfig = {0};
   TIM_MasterConfigTypeDef sMasterConfig = {0};
 
   /* USER CODE BEGIN TIM2_Init 1 */
+
+  /* 中文说明：TIM2 初始化用户区 1（配置参数前的用户代码区，重新生成时会保留） */
 
   /* USER CODE END TIM2_Init 1 */
   htim2.Instance = TIM2;
@@ -295,6 +341,8 @@ static void MX_TIM2_Init(void)
   }
   /* USER CODE BEGIN TIM2_Init 2 */
 
+  /* 中文说明：TIM2 初始化用户区 2（HAL_TIM_* 初始化后，可做自定义配置，重新生成时会保留） */
+
   /* USER CODE END TIM2_Init 2 */
 
 }
@@ -309,6 +357,8 @@ static void MX_TIM3_Init(void)
 
   /* USER CODE BEGIN TIM3_Init 0 */
 
+  /* 中文说明：TIM3 初始化用户区 0（初始化开始前，可插入自定义代码，重新生成时会保留） */
+
   /* USER CODE END TIM3_Init 0 */
 
   TIM_ClockConfigTypeDef sClockSourceConfig = {0};
@@ -316,6 +366,8 @@ static void MX_TIM3_Init(void)
   TIM_OC_InitTypeDef sConfigOC = {0};
 
   /* USER CODE BEGIN TIM3_Init 1 */
+
+  /* 中文说明：TIM3 初始化用户区 1（配置参数前的用户代码区，重新生成时会保留） */
 
   /* USER CODE END TIM3_Init 1 */
   htim3.Instance = TIM3;
@@ -361,6 +413,8 @@ static void MX_TIM3_Init(void)
   }
   /* USER CODE BEGIN TIM3_Init 2 */
 
+  /* 中文说明：TIM3 初始化用户区 2（PWM 通道配置后，可插入自定义配置，重新生成时会保留） */
+
   /* USER CODE END TIM3_Init 2 */
   HAL_TIM_MspPostInit(&htim3);
 
@@ -376,9 +430,13 @@ static void MX_USART1_UART_Init(void)
 
   /* USER CODE BEGIN USART1_Init 0 */
 
+  /* 中文说明：USART1 初始化用户区 0（初始化开始前，可插入自定义代码，重新生成时会保留） */
+
   /* USER CODE END USART1_Init 0 */
 
   /* USER CODE BEGIN USART1_Init 1 */
+
+  /* 中文说明：USART1 初始化用户区 1（配置参数前的用户代码区，重新生成时会保留） */
 
   /* USER CODE END USART1_Init 1 */
   huart1.Instance = USART1;
@@ -395,6 +453,8 @@ static void MX_USART1_UART_Init(void)
   }
   /* USER CODE BEGIN USART1_Init 2 */
 
+  /* 中文说明：USART1 初始化用户区 2（HAL_UART_Init 之后的用户代码区，重新生成时会保留） */
+
   /* USER CODE END USART1_Init 2 */
 
 }
@@ -407,6 +467,12 @@ static void MX_USART1_UART_Init(void)
 static void MX_GPIO_Init(void)
 {
   GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+  /*
+   * GPIO 初始化
+   * - 输出：电机 DIR/STEP/SLEEP、LED、电源控制等
+   * - 输入中断：PAN/AEG/RADAR 原点/限位
+   */
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOC_CLK_ENABLE();
@@ -475,6 +541,7 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_Init(PAN_MOTOR_DIR_GPIO_Port, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
+  /* 配置外部中断优先级并使能（EXTI9_5/EXTI15_10） */
   HAL_NVIC_SetPriority(EXTI9_5_IRQn, 1, 0);
   HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
 
@@ -489,6 +556,11 @@ uint16_t global_timer_count_us = 0;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	if(htim == &htim2){
+		/*
+		 * 全局节拍：TIM2 周期中断回调
+		 * - 通过累加 global_timer_count_us 形成一个简单的软定时器
+		 * - 到达各模块最小周期时，仅置位 perodic_routines_dispatched
+		 */
 		global_timer_count_us += GLOBAL_TIMER_INT_PERIOD_US;
 		if(global_timer_count_us >= 10000){
 			global_timer_count_us = 0;
@@ -515,6 +587,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 }
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
+	/* 外部中断回调：根据触发引脚分发到各模块 ISR */
 #ifdef FIRE_CTRL
 	if(GPIO_Pin == AEG_PISTON_ENDSTOP_Pin){
 		fire_ctrl_isr(GPIO_Pin);
@@ -536,6 +609,13 @@ void MX_I2C_ForceClearBusyFlag(I2C_HandleTypeDef *hi2c,
 							   GPIO_TypeDef* sda_gpio_port, uint16_t sda_gpio_pin,
 							   GPIO_TypeDef* scl_gpio_port, uint16_t scl_gpio_pin){
 	GPIO_InitTypeDef GPIO_InitStructure;
+
+	/*
+	 * I2C BUSY 清除（总线恢复）流程说明：
+	 * - 将 I2C 外设关闭，把 SCL/SDA 临时切为 GPIO OD
+	 * - 通过拉低/拉高 SDA/SCL 生成一个“伪 STOP”/时钟，释放被从机拉住的 SDA
+	 * - 最后恢复为 I2C 复用并软复位 I2C 外设
+	 */
 
 	// 1. Disable the I2C peripheral by clearing the PE bit in I2Cx_CR1 register
 	__HAL_I2C_DISABLE(hi2c);

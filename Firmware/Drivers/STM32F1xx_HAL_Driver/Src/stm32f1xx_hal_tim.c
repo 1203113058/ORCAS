@@ -28,6 +28,8 @@
   *           + TIM Encoder Interface Start DMA
   *           + Commutation Event configuration with Interruption and DMA
   *           + TIM OCRef clear configuration
+  *
+  *          中文翻译：TIM HAL 模块驱动，提供定时器基准、PWM、输入捕获、编码器等实现。
   *           + TIM External Clock configuration
   ******************************************************************************
   * @attention
